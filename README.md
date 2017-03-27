@@ -39,7 +39,7 @@ Each sub folder is an independant script. All of them are designed with the same
 ### Purpose
 
 This script will manage VM's tags affectation from a CSV file. It's useful when some mandatory tags has to be assign to VMs.
-Ths CSV file is the source of truth for those specifics tags. Any manual modification of this tags will be overwritten by the script.
+The CSV file is the source of truth for those specifics tags. Any manual modification of this tags will be overwritten by the script.
 
 ### Configuration files
 
@@ -56,7 +56,7 @@ Before using this script, you will need to modify those files:
 
 ### Purpose
 
-This script will manage DRS VM's groups. VMs will are added or removed depending on the tags associated to it.
+This script will manage DRS VM's groups. VMs are added or removed depending on the tags associated to it.
 
 ### Configuration files
 
@@ -70,7 +70,7 @@ Before using this script, you will need to modify those files:
 
 ### Known limitations
 
-- VM Groups should contains at least to VMs otherwise the script will throw an error if it has to removed a VM from a group with only one VM.
+- VM Groups should contains at least two VMs otherwise the script will throw an error if it has to removed a VM from a group with only one VM.
 
 ## SPBMFromTag
 

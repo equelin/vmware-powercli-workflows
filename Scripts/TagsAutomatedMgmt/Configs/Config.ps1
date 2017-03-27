@@ -1,9 +1,12 @@
+# Initializing empty array
 $cfg = @{}
 
+# FQDN / IP of the vCenter
 $cfg.vcenter = @{
-    vc = 'vcenter01.okcomputer.lab'
+    vc = 'vcenter01.example.com'
 }
 
+# Scope
 $cfg.scope = @{
     datacenter = 'vLAB'
     cluster    = 'vCLUSTER'
@@ -11,7 +14,7 @@ $cfg.scope = @{
     vm         = '*'
 }
 
-# Mandatory tag's category thas has to be assign to VMs
+# Mandatory tag's categories that have to be assign to VMs
 $cfg.category = @(
     'Datacenter',
     'Replication'

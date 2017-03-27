@@ -1,3 +1,8 @@
+<#
+.NOTES
+https://github.com/equelin/vmware-powercli-workflows
+#>
+
 [cmdletbinding()]
 param(
     [string[]]$Task = 'default'
