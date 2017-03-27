@@ -11,9 +11,11 @@ $cfg.scope = @{
     vm         = '*'
 }
 
+# Mandatory tag's category thas has to be assign to VMs
 $cfg.category = @(
     'Datacenter',
     'Replication'
 )
 
+# CSV File name and folder
 $cfg.data = '.\Data\Tags.csv'
