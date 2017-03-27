@@ -1,0 +1,5 @@
+VM,Datacenter,Replication
+VM01,DC02,True
+VM02,DC01,False
+VM03,DC01,True
+VM04,DC02,True
