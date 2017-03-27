@@ -6,7 +6,13 @@ Most of the automation is build around VMware Tags. For example VMs could be add
 
 ![](./Img/TagsAutomatedMgmt.gif)
 
-Each sub folder is an independant script. All of them are designed with the same pattern that has been inspired by Brandon Olin (@devblackops) blog post https://devblackops.io/building-a-simple-release-pipeline-in-powershell-using-psake-pester-and-psdeploy/.
+List of the available scripts:
+- [TagsAutomatedMgmt](#TagsAutomatedMgmt)
+- [DRSGroupsAutomatedMgmt](#DRSGroupsAutomatedMgmt)
+- [SPBMFromTag](#SPBMFromTag)
+- [MoveVMToCompliantDS](#MoveVMToCompliantDS)
+
+Each sub folder is an independant script. All of them are designed with the same pattern that has been inspired by [Brandon Olin](https://github.com/devblackops) blog post https://devblackops.io/building-a-simple-release-pipeline-in-powershell-using-psake-pester-and-psdeploy/.
 
 # Requirements
 
@@ -115,3 +121,8 @@ Before using this script, you will need to modify those files:
 **Erwan Quélin**
 - <https://github.com/equelin>
 - <https://twitter.com/erwanquelin>
+
+# Special Thanks
+
+- [Brandon Olin](https://github.com/devblackops) for his [blog post](https://devblackops.io/building-a-simple-release-pipeline-in-powershell-using-psake-pester-and-psdeploy/) about Powershell release pipeline.
+- [Luc Deckens](https://github.com/lucdekens) and [Matt Boren](https://github.com/mtboren) for the [DRSRule](https://github.com/PowerCLIGoodies/DRSRule) module used in GRSGroupsAutomatedMgmt script.
