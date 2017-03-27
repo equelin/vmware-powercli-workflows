@@ -7,10 +7,10 @@ Most of the automation is build around VMware Tags. For example VMs could be add
 ![](./Img/TagsAutomatedMgmt.gif)
 
 List of the available scripts:
-- [TagsAutomatedMgmt](#TagsAutomatedMgmt)
-- [DRSGroupsAutomatedMgmt](#DRSGroupsAutomatedMgmt)
-- [SPBMFromTag](#SPBMFromTag)
-- [MoveVMToCompliantDS](#MoveVMToCompliantDS)
+- [TagsAutomatedMgmt](#tagsautomatedmgmt)
+- [DRSGroupsAutomatedMgmt](#drsgroupsautomatedmgmt)
+- [SPBMFromTag](#spbmfromtag)
+- [MoveVMToCompliantDS](#movevmtocompliantds)
 
 Each sub folder is an independant script. All of them are designed with the same pattern that has been inspired by [Brandon Olin](https://github.com/devblackops) blog post https://devblackops.io/building-a-simple-release-pipeline-in-powershell-using-psake-pester-and-psdeploy/.
 
