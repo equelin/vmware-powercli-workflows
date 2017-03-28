@@ -2,7 +2,7 @@
 
 This repository purpose is to gather multiple scripts to help automating VMware vSphere infrastructures management. 
 
-Most of the automation is build around VMware Tags. For example VMs could be added or removed from DRS groups depending of its tag. The same goes for SPBM management.
+Most of the automation is build around VMware Tags. For example VMs could be added or removed from DRS groups depending of there tags. The same goes for SPBM management.
 
 ![](./Img/TagsAutomatedMgmt.gif)
 
@@ -39,12 +39,10 @@ Each sub folder is an independant script. All of them are designed with the same
 ```
 
 # Scripts purposes and requirements
-
 ## TagsAutomatedMgmt
-
 ### Purpose
 
-This script will manage VM's tags affectation from a CSV file. It's useful when some mandatory tags has to be assign to VMs.
+This script will manage VM's tags affectation from a CSV file. It's useful when some mandatory tags have to be assign to VMs.
 The CSV file is the source of truth for those specifics tags. Any manual modification of this tags will be overwritten by the script.
 
 ### Configuration files
@@ -55,11 +53,21 @@ Before using this script, you will need to modify those files:
 
 ### Requirements
 
-- Categories have to be created before running the script
+- Categories and tags have to be created before running the script
 - All VM needs to be listed in the CSV file otherwise precheck test will throw an error.
 
-## DRSGroupsAutomatedMgmt
+### Config.ps1 highlights
 
+```Powershell
+# Mandatory tag's categories that have to be assign to VMs
+# Those categories have to be created before running the script
+$cfg.category = @(
+    'Datacenter',
+    'Replication'
+)
+```
+
+## DRSGroupsAutomatedMgmt
 ### Purpose
 
 This script will manage DRS VM's groups. VMs are added or removed depending on the tags associated to it.
@@ -78,8 +86,21 @@ Before using this script, you will need to modify those files:
 
 - VM Groups should contains at least two VMs otherwise the script will throw an error if it has to removed a VM from a group with only one VM.
 
-## SPBMFromTag
+### Config.ps1 highlights
 
+```Powershell
+# Category where to look at tags associated to DRS VM Group
+$cfg.TagCategory = 'Datacenter'
+
+# Tag associated to DRS VM group
+# 1 Tag = 1 DRS VM group
+$cfg.TagDRSGroup = @(
+    @{'DC01' = 'VM-DC01'},
+    @{'DC02' = 'VM-DC02'}
+)
+```
+
+## SPBMFromTag
 ### Purpose
 
 This script will manage Storage Policy affectation to VMs based on tags. The script will compare tags assign to the VM with tags used in SPBM rule-sets. 
@@ -92,16 +113,22 @@ Before using this script, you will need to modify those files:
 ### Requirements
 
 - SPBM should have been created first before running the script.
+- SPBM Rule-Set should use the same tags than the VMs
 
-### Known limitations
+### Config.ps1 highlights
 
-- VM Groups should contains at least to VMs otherwise the script will throw an error if it has to removed a VM from a group with only one VM.
+```Powershell
+# Tag categories used by the Storage Policies and VMs
+$cfg.TagCategory = @(
+    'Datacenter',
+    'Replication'
+)
+```
 
 ## MoveVMToCompliantDS
-
 ### Purpose
 
-This script will invoke a Storage vMotion to move VMs to a complaiant datastore.
+This script will invoke a Storage vMotion to move VMs to a compliant datastore. If multiple datastore are compliants, the one with higher free space is selected.
 
 ### Configuration files
 
@@ -111,10 +138,6 @@ Before using this script, you will need to modify those files:
 ### Requirements
 
 - SPBM should have been created first before running the script.
-
-### Known limitations
-
-- VM Groups should contains at least to VMs otherwise the script will throw an error if it has to removed a VM from a group with only one VM.
 
 # Author
 

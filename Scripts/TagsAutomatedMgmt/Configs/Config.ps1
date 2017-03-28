@@ -15,6 +15,7 @@ $cfg.scope = @{
 }
 
 # Mandatory tag's categories that have to be assign to VMs
+# Those categories have to be created before running the script
 $cfg.category = @(
     'Datacenter',
     'Replication'

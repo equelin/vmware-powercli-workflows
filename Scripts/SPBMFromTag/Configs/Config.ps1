@@ -14,7 +14,7 @@ $cfg.scope = @{
     vm         = '*'
 }
 
-# Tag categories used by the Storage Policies
+# Tag categories used by the Storage Policies and VMs
 $cfg.TagCategory = @(
     'Datacenter',
     'Replication'

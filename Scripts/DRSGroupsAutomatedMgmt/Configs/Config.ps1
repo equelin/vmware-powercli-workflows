@@ -14,10 +14,11 @@ $cfg.scope = @{
     vm         = '*'
 }
 
-# Category
+# Category where to look at tags associated to DRS VM Group
 $cfg.TagCategory = 'Datacenter'
 
 # Tag associated to DRS VM group
+# 1 Tag = 1 DRS VM group
 $cfg.TagDRSGroup = @(
     @{'DC01' = 'VM-DC01'},
     @{'DC02' = 'VM-DC02'}
